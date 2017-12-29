@@ -7,13 +7,20 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>e3mall-manager-service</artifactId>
+	<packaging>war</packaging>
 	<description>业务层</description>
 
 	<dependencies>
-		<!-- service事务层依赖dao层 -->
+		<!-- service业务层依赖dao层 -->
 		<dependency>
 			<groupId>cn.jiayao</groupId>
 			<artifactId>e3mall-manager-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- service业务层依赖interface接口 -->
+		<dependency>
+			<groupId>cn.jiayao</groupId>
+			<artifactId>e3mall-manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -46,5 +53,35 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
+
+		<!-- dubbo 相关 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
 	</dependencies>
+
+	<!-- 配置tomcat插件 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>8082</port>
+					<path>/</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

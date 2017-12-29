@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>e3mall-manager-service</display-name>
+
+	<!-- 加载spring配置文件 1.如果加载jar包配置文件，需要如下加载方式： classpath*:applicatonContext-*.xml 
+		2.把配置文件全部放入web项目。 加载方式： classpath： applicationContext-*.xml(使用MAVEN内置tomcat插件) -->
+		<!-- 父容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- 加载spring核心配置文件以及  dubbo发布服务配置文件 -->
+		<param-value>classpath:spring/*.xml,</param-value>
+	</context-param>
+
+</web-app>

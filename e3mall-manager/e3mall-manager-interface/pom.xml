@@ -2,29 +2,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>cn.jiayao</groupId>
-    <artifactId>e3-parent</artifactId>
+    <artifactId>e3mall-manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>e3mall-manager</artifactId>
-  <packaging>pom</packaging>
-  <description>聚合后台管理系统</description>
-  <modules>
-  
-  	<!-- 子模块  -->
-  	<module>e3mall-manager-dao</module>
-  	<module>e3mall-manager-service</module>
-  	<module>e3mall-manager-pojo</module>
-  	<module>e3mall-manager-interface</module>
-  </modules>
-  
+  <artifactId>e3mall-manager-interface</artifactId>
+  <description>Service的接口</description>
   <dependencies>
-  	<!-- 依赖common 自定义工具类 -->
   	<dependency>
   		<groupId>cn.jiayao</groupId>
-  		<artifactId>e3mall-common</artifactId>
+  		<artifactId>e3mall-manager-pojo</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
-  
-  
 </project>
